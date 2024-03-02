@@ -7,6 +7,7 @@ import { useSearchParams } from 'react-router-dom';
 import IconCircle from '../Icons/IconCircle';
 import IconPeopleFill from "../Icons/IconPeopleFill";
 import IconPeopleOutline from '../Icons/IconPeopleOutline';
+import IconDanger from "../Icons/IconDanger";
 // import { shortenNumber } from '../helpers/utilityFunctions';
 import { Grid } from '@mui/material';
 
@@ -232,7 +233,7 @@ function Planet() {
               >
                 <b style={{ margin: "auto" }}>
                   {isNaN(planet.population)
-                    ? planet.population
+                    ? planet.population.toUpperCase()
                     : planet.orbital_period}
                 </b>
               </div>
@@ -276,13 +277,19 @@ function Planet() {
             }}
           >
             <Grid container spacing={0}>
-              {planet.residents.map((el) => {
-                return (
-                  <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                    <ResidentCard url={el} />
-                  </Grid>
-                );
-              })}
+              {planet.length > 0
+                ? planet.residents.map((el) => {
+                    return (
+                      <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                        <ResidentCard url={el} />
+                      </Grid>
+                    );
+                  })
+                : <div style={{ width: "100%", padding: "0.5rem", textAlign: "center", display: "flex", flexDirection: "row", justifyContent: "center" }}>
+                  <IconDanger style={{margin: "auto 5px"}} /><p>NO RESIDENTS FOUND IN DATA BANK</p>
+                </div>
+              
+              }
             </Grid>
           </div>
         </div>

@@ -94,7 +94,7 @@ function HomePage() {
           <i className={`${hasPrev == true ? "arrow" : "disabled"} left`}></i>
           PREV
         </Button>
-        <p style={{ color: "white", lineHeight: "0.2rem" }}>page {page} of {count}</p>
+        <p style={{ color: "white", lineHeight: "0.2rem" }}>page {page} of {count/10}</p>
         <Button variant="primary" onClick={() => {setPage(page+1)}} disabled={!hasNext}>
           NEXT
           <i className='arrow right'></i>

@@ -3,7 +3,7 @@ import * as React from "react";
 
 function IconDanger(props) {
   return (
-    <svg fill="none" viewBox="0 0 24 24" height="1em" width="1em" {...props}>
+    <svg fill="none" viewBox="0 0 24 24" height="1.5em" width="1.5em" {...props}>
       <path
         fill="currentColor"
         d="M12 6a1 1 0 011 1v6a1 1 0 11-2 0V7a1 1 0 011-1zM12 16a1 1 0 100 2 1 1 0 000-2z"
