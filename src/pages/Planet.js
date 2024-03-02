@@ -277,7 +277,7 @@ function Planet() {
             }}
           >
             <Grid container spacing={0}>
-              {planet.length > 0
+              {planet.residents.length > 0
                 ? planet.residents.map((el) => {
                     return (
                       <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
