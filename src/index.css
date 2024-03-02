@@ -1,13 +1,141 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  font-family: Rubik,sans-serif;
+  /* color: white; */
+  /* overflow-x: hidden; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.wrapper, html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: black;
+}
+
+.box-header {
+  color: rgb(0, 0, 0);
+  background-color: rgb(250, 250, 250);
+  border: 1px solid rgb(250, 250, 250);
+  padding: 0.25em 0.75em;
+}
+
+.cell {
+  color: white;
+}
+
+.box {
+  border: 1px solid rgb(250, 250, 250);
+}
+
+canvas {
+  border: 2px solid darkblue;
+  border-radius: 50%;
+}
+
+.hidden-overflow {
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* overflow-y:hidden; */
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+}
+
+.right {
+  
+  transform: rotate(-45deg) ;
+  -webkit-transform: rotate(-45deg);
+  
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.disabled {
+  border: solid grey;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+}
+
+.MuiCircularProgress-colorPrimary {
+  color: white !important;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+.clickable:hover {
+  -webkit-transform: scale(.95);
+  transform: scale(.95);
+}
+
+@keyframes rect1 {
+  0%   {transform: scaleY(0);}
+  100%   {transform: scaleY(100px);}
+}
+
+#rect1 {
+  animation: rect1 5s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes rect2 {
+  0%   {transform: scaleY(0);}
+  100%   {transform: scaleY(100px);}
+}
+
+#rect2 {
+  animation: rect2 3.4s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes rect3 {
+  0%   {transform: scaleY(0);}
+  100%   {transform: scaleY(100px);}
+}
+
+#rect3 {
+  animation: rect3 3.3s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes rect4 {
+  0%   {transform: scaleY(0);}
+  100%   {transform: scaleY(100px);}
+}
+
+#rect4 {
+  animation: rect4 2.8s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes rect5 {
+  0%   {transform: scaleY(0);}
+  100%   {transform: scaleY(100px);}
+}
+
+#rect5 {
+  animation: rect5 4s infinite;
+  animation-direction: alternate;
 }
