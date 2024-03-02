@@ -11,7 +11,7 @@ const Canvas = props => {
     
     const canvas = canvasRef.current
     const context = canvas.getContext('2d')
-    displayPlanet(context)
+    displayPlanet(planet, context)
   }, [])
   
   return <canvas id={planet} ref={canvasRef} {...rest} width={width} height={width} />

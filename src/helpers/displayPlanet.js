@@ -1,11 +1,18 @@
+import seedrandom from "seedrandom";
+
 var colors;
     var tileNum = 0;
     var tiles;
     var colorsLand;
     var colorsWater;
 
-function displayPlanet(ctx) {
+    var rng;
+
+
+
+function displayPlanet(planet, ctx) {
   //reset
+  rng = seedrandom(planet)
   tileNum = 0;
   tiles = [{ x: 0, y: 0, land: false }];
 
@@ -19,15 +26,15 @@ function displayPlanet(ctx) {
       if (currentTile.x <= 69) {
           var isLand = false;
           if (currentTile.land == true || tiles.length > 70 && tiles[tiles.length - 70].land == true) {                    
-              isLand = (Math.floor(Math.random() * 100) + 1) > 35;
+              isLand = (Math.floor(rng() * 100) + 1) > 35;
           }
           else if (currentTile.land == true || tiles.length > 70 &&
               (tiles[tiles.length - 1].land == true ||
                   tiles[tiles.length - 70].land == true)) {
-              isLand = (Math.floor(Math.random() * 100) + 1) > 70;
+              isLand = (Math.floor(rng() * 100) + 1) > 70;
           }
           else {
-              isLand = (Math.floor(Math.random() * 100) + 1) > 99;
+              isLand = (Math.floor(rng() * 100) + 1) > 99;
           }
           tiles.push({ x: currentTile.x + 1, y: currentTile.y, land: isLand });
       }
@@ -41,9 +48,9 @@ function displayPlanet(ctx) {
 //retrive a random color if it's a land tile i want it dark water i want light
 function getColor(land) {
   while (true) {
-      var r = Math.floor(Math.random() * 256) + 1
-      var g = Math.floor(Math.random() * 256) + 1
-      var b = Math.floor(Math.random() * 256) + 1
+      var r = Math.floor(rng() * 256) + 1
+      var g = Math.floor(rng() * 256) + 1
+      var b = Math.floor(rng() * 256) + 1
       let hsp = Math.sqrt(
           0.299 * (r * r) +
           0.587 * (g * g) +
@@ -87,11 +94,11 @@ function interpolateColor(color1, color2, factor) {
 
 //retrives a random color for land
 function rndLandColor() {
-  return 'rgb(' + colorsLand[Math.floor(Math.random() * 5999) + 1] + ')';
+  return 'rgb(' + colorsLand[Math.floor(rng() * 5999) + 1] + ')';
 }
 //retrives a random color for water
 function rndWaterColor() {
-  return 'rgb(' + colorsWater[Math.floor(Math.random() * 5999) + 1] + ')';
+  return 'rgb(' + colorsWater[Math.floor(rng() * 5999) + 1] + ')';
 }
 
 function drawPlanet(ctx) {
